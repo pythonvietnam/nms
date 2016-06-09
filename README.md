@@ -25,7 +25,7 @@ The NMS Project of Python Vietnam
 
 ## Config django-allauth
 * update django_site set `domain`='localhost', `name`='NMS' where id=1;
-* insert into socialaccount_socialapp(`provider`, `name`, `client_id`, `secret`, `key`) values ('facebook', 'facebook', '1704675499790491', 'ac98e3b5c21fe8a1db6097f21824d387', '');
+* insert into socialaccount_socialapp(`provider`, `name`, `client_id`, `secret`, `key`) values ('facebook', 'facebook', 'site_id', 'token_key', '');
 * insert into socialaccount_socialapp_sites(`socialapp_id`, `site_id`) values (1, 1);
 
 ## Config the apps:
