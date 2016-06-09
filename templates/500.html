@@ -1,0 +1,137 @@
+{% load staticfiles %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>500 Page NMS - Python Việt Nam</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/icons/icomoon/styles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/core.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/logo_light.png' %}" alt=""></a>
+
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <i class="icon-cog3"></i>
+                        <span class="visible-xs-inline-block position-right"> Abouts</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page container -->
+    <div class="page-container login-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Error wrapper -->
+                    <div class="container-fluid text-center">
+                        <h1 class="error-title">500</h1>
+                        <h6 class="text-semibold content-group">Oops, an error has occurred. Page not found!</h6>
+
+                        <div class="row">
+                            <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+                                <form action="#" class="main-search">
+                                    <div class="input-group content-group">
+                                        <input type="text" class="form-control input-lg" placeholder="Search">
+
+                                        <div class="input-group-btn">
+                                            <button type="submit" class="btn bg-slate-600 btn-icon btn-lg"><i class="icon-search4"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <a href="{% url 'home' %}" class="btn btn-primary btn-block content-group"><i class="icon-circle-left2 position-left"></i> Go to dashboard</a>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <a href="{% url 'home' %}" class="btn btn-default btn-block content-group"><i class="icon-menu7 position-left"></i> Advanced search</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /error wrapper -->
+
+
+                    <!-- Footer -->
+                    <div class="footer text-muted">
+                        &copy; 2016. <a href="http://jetpjng.com">NMS Tool</a> by <a href="http://pythonvietnam.info" target="_blank">Python Việt Nam</a>
+                    </div>
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/loaders/pace.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/core/libraries/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/core/libraries/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/loaders/blockui.min.js' %}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/visualization/d3/d3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/visualization/d3/d3_tooltip.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/styling/switchery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/selects/bootstrap_multiselect.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/ui/moment/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/pickers/daterangepicker.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/core/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/pages/dashboard.js' %}"></script>
+    <!-- /theme JS files -->
+
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

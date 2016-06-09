@@ -1,0 +1,109 @@
+{% extends 'base/layout.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{% endblock %}
+
+<!-- Page header -->
+{% block page_header %}
+<div class="page-header">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - About</h4>
+        </div>
+    </div>
+
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="{% url 'home' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+            <li class="active">About</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<!-- /page header -->
+
+{% block content %}
+    <!-- Search field -->
+    <div class="panel">
+        <div class="panel-body">
+            <h4 class="text-center content-group-lg">
+                Welcome to NMS Tool
+                <small class="display-block">This is a project of Pythonvietnam.info</small>
+            </h4>
+        </div>
+    </div>
+    <!-- /search field -->
+
+    <!-- Featured articles -->
+
+    <div class="row">
+        <div class="col-lg-4 col-sm-6">
+            <div class="thumbnail">
+                <div class="thumb">
+                    <img src="{% static 'assets/images/nguyen.ngoc.khanh.jpg' %}" alt="">
+                    <div class="caption-overflow">
+                        <span>
+                            <a target="_blank" href="http://pythonvietnam.info" class="btn border-white text-white btn-flat btn-icon btn-rounded ml-5"><i class="icon-link2"></i></a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="caption">
+                    <h6 class="text-semibold no-margin-top"><a href="#" class="text-default">Nguyễn Ngọc Khánh</a></h6>
+                    SysAdmin Manager <br/>
+                    LPIC, CCNA, OCP, VCP.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+            <div class="thumbnail">
+                <div class="thumb">
+                    <img src="{% static 'assets/images/tran.duc.loi.jpg' %}" alt="">
+                    <div class="caption-overflow">
+                        <span>
+                            <a href="mailto:loitranduc@gmail.com" class="btn border-white text-white btn-flat btn-icon btn-rounded ml-5"><i class="icon-link2"></i></a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="caption">
+                    <h6 class="text-semibold no-margin-top"><a href="#" class="text-default">Trần Đức Lợi</a></h6>
+                    PM & Backend<br>
+                    A tech guy. I've been fond of Art, Programming, Music and Swimming.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+            <div class="thumbnail">
+                <div class="thumb">
+                    <img src="{% static 'assets/images/truong.tuan.quang.JPG' %}" alt="">
+                    <div class="caption-overflow">
+                        <span>
+                            <a target="_blank" href="http://fb.me/tuanquanghpvn" class="btn border-white text-white btn-flat btn-icon btn-rounded ml-5"><i class="icon-link2"></i></a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="caption">
+                    <h6 class="text-semibold no-margin-top"><a href="#" class="text-default">Trương Tuấn Quang</a></h6>
+                    Free Developer <br>
+                    Code is my two life. I can code every time, every where but without WC. Thanks !
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /featured articles -->
+{% endblock %}
+
+{% block js %}
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/tables/datatables/datatables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/core/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/pages/datatables_data_sources.js' %}"></script>
+    <!-- /theme JS files -->
+{% endblock %}

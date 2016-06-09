@@ -1,0 +1,136 @@
+{% load staticfiles %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login NMS - Python Việt Nam</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/icons/icomoon/styles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/core.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/logo_light.png' %}" alt=""></a>
+
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'about' %}">
+                        <span class="position-right"> About</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'help' %}">
+                        <span class="position-right"> Help</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page container -->
+    <div class="page-container login-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Advanced login -->
+                    <form action="index.html">
+                        <div class="panel panel-body login-form">
+                            <div class="text-center">
+                                <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+                                <h5 class="content-group">We need you public your email address in social account ! <small class="display-block">Your credentials</small></h5>
+                            </div>
+
+                            <ul class="list-inline form-group list-inline-condensed text-center">
+                                <li>
+                                    <a href="{% provider_login_url "facebook" method="oauth2" %}" class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded"><i class="icon-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{% provider_login_url "github" method="oauth2" %}" class="btn border-slate-600 text-slate-600 btn-flat btn-icon btn-rounded"><i class="icon-github"></i></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i class="icon-twitter"></i></a>
+                                </li> -->
+                            </ul>
+
+                            <span class="help-block text-center no-margin">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+                        </div>
+                    </form>
+                    <!-- /advanced login -->
+
+
+                    <!-- Footer -->
+                    <div class="footer text-muted">
+                        &copy; 2016. <a href="http://jetpjng.com">NMS Tool</a> by <a href="http://pythonvietnam.info" target="_blank">Python Việt Nam</a>
+                    </div>
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/loaders/pace.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/core/libraries/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/core/libraries/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/loaders/blockui.min.js' %}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/visualization/d3/d3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/visualization/d3/d3_tooltip.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/styling/switchery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/selects/bootstrap_multiselect.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/ui/moment/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/pickers/daterangepicker.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/core/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/pages/dashboard.js' %}"></script>
+    <!-- /theme JS files -->
+
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

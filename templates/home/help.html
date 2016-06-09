@@ -1,0 +1,214 @@
+{% extends 'base/layout.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{% endblock %}
+
+<!-- Page header -->
+{% block page_header %}
+<div class="page-header">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Help</h4>
+        </div>
+    </div>
+
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="{% url 'home' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+            <li class="active">Help</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<!-- /page header -->
+
+{% block content %}
+    <!-- Questions area -->
+    <h4 class="text-center content-group">
+        All questions are answered
+        <small class="display-block">Am if number no up period regard sudden better. Decisively surrounded all admiration</small>
+    </h4>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- Questions list -->
+            <div class="panel-group panel-group-control panel-group-control-right">
+                
+                <div class="panel panel-white">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" href="#question1">
+                                <i class="icon-help position-left text-slate"></i> Hệ thống NMS để thực hiện công việc gì?
+                            </a>
+                        </h6>
+                    </div>
+
+                    <div id="question1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            NMS là một dự án nguồn mở của cộng đồng Python Việt Nam, dự án được thực hiện dựa trên sự kết hợp nghiêm chỉnh giữa các thành viên. NMS thực hiện theo dõi hoạt động, tính ổn định của IP/Website người dùng.
+                        </div>
+
+                        <div class="panel-footer panel-footer-transparent">
+                            <ul>
+                                <li class="text-muted">Latest update: Jun 10, 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-white">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" href="#question2">
+                                <i class="icon-help position-left text-slate"></i> Tôi muốn bắt đầu sử dụng dịch vụ của jetpjng.com tôi cần làm những gì?
+                            </a>
+                        </h6>
+                    </div>
+
+                    <div id="question2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                <b>Bước 1:</b> Đăng nhập, bạn cần có tài khoản Facebook hoặc Github để đăng nhập dịch vụ. Chú ý, bạn cần public email, đây là điều kiện bắt buộc. Từ giao diện chính bạn chọn biểu tượng facebook.
+
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q2_b1.png' %}">
+                                </div>
+                            </p>
+
+                            <p>
+                                <b>Bước 2:</b> Xác nhận yêu cầu đăng nhập và tạo tài khoản trên hệ thống NMS, bạn chọn OK.
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q2_b2_1.png' %}">
+                                </div>
+                            </p>
+                            
+                            <p class="text-center">Giao diện sau khi đăng nhập thành công.
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q2_b2_2.png' %}">
+                                </div>
+                            </p>
+                        </div>
+
+                        <div class="panel-footer panel-footer-transparent">
+                            <ul>
+                                <li class="text-muted">Latest update: Jun 10, 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-white">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" href="#question3">
+                                <i class="icon-help position-left text-slate"></i> Tôi muốn thêm mới và theo dõi ping address tôi cần làm những gì?
+                            </a>
+                        </h6>
+                    </div>
+
+                    <div id="question3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                <b>Bước 1:</b> Bạn chọn Address từ menu màn hình chính, sau đó chọn New Address.
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q3_b1.png' %}">
+                                </div>
+                            </p>
+
+                            <p>
+                                <b>Bước 2:</b> Bạn điền địa chỉ Website hoặc IP, sau đó bạn chọn Submit.
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q3_b2.png' %}">
+                                </div>
+                            </p>
+
+                            <p>
+                                <b>Bước 3:</b> Để thực hiện theo dõi bạn click chọn Dashboard như hình dưới đây.
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q3_b3.png' %}">
+                                </div>
+                            </p>
+                        </div>
+
+                        <div class="panel-footer panel-footer-transparent">
+                            <ul>
+                                <li class="text-muted">Latest update: Jun 10, 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-white">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" href="#question4">
+                                <i class="icon-help position-left text-slate"></i> Tôi muốn sửa/xóa address tôi cần làm những gì?
+                            </a>
+                        </h6>
+                    </div>
+
+                    <div id="question4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>
+                                <b>Bước 1:</b> Bạn chọn Address từ menu màn hình chính, sau đó chọn List Address.
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q4_b1.png' %}">
+                                </div>
+                            </p>
+
+                            <p>
+                                <b>Bước 2:</b> Giao diện danh sách địa chỉ như sau. Chọn action tương ứng (sửa/xóa) bạn muốn
+                                <div class="text-center">
+                                    <img src="{% static 'assets/doc/q4_b2.png' %}">
+                                </div>
+                            </p>
+                        </div>
+
+                        <div class="panel-footer panel-footer-transparent">
+                            <ul>
+                                <li class="text-muted">Latest update: Jun 10, 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-white">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" href="#question5">
+                                <i class="icon-help position-left text-slate"></i> Tại sao tôi đăng nhập lại báo lỗi?
+                            </a>
+                        </h6>
+                    </div>
+
+                    <div id="question5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Bạn hãy chắc chắn rằng tài khoản mạng xã hội của mình như facebook hoặc tài khoản github đã được public email. Bởi hệ thống của chúng tôi yêu cầu email để xác thực tài khoản.</p>
+                        </div>
+
+                        <div class="panel-footer panel-footer-transparent">
+                            <ul>
+                                <li class="text-muted">Latest update: Jun 10, 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <!-- /questions list -->
+
+        </div>
+    </div>
+    <!-- /questions area -->
+{% endblock %}
+
+{% block js %}
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/tables/datatables/datatables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/core/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/pages/datatables_data_sources.js' %}"></script>
+    <!-- /theme JS files -->
+{% endblock %}

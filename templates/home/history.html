@@ -1,0 +1,64 @@
+{% extends 'base/layout.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{% endblock %}
+
+<!-- Page header -->
+{% block page_header %}
+<div class="page-header">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - History</h4>
+        </div>
+    </div>
+
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="{% url 'home' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+            <li class="active">History</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<!-- /page header -->
+
+{% block content %}
+    <!-- Ajax sourced data -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">History Ping</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            
+        </div>
+
+        <table class="table datatable-ajax">
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>Start Time</th>
+                    <th>Ping Time</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- /ajax sourced data -->
+{% endblock %}
+
+{% block js %}
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="{% static 'assets/js/plugins/tables/datatables/datatables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/core/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/pages/datatables_data_sources.js' %}"></script>
+    <!-- /theme JS files -->
+{% endblock %}

@@ -1,0 +1,14 @@
+amqp==1.4.9
+aniso8601==1.1.0
+anyjson==0.3.3
+Babel==2.3.4
+gevent==1.1.1
+greenlet==0.4.9
+pika==0.10.0
+pkg-resources==0.0.0
+python-dateutil==2.5.3
+python-memcached==1.58
+python3-openid==3.0.10
+pytz==2016.4
+requests==2.10.0
+requests-oauthlib==0.6.1

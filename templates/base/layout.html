@@ -1,0 +1,126 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ info.title }}</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/icons/icomoon/styles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/core.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/minified/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.png' %}">
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    {% include 'base/navbar.html' %}
+    <!-- /main navbar -->
+
+
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            {% include 'base/sidebar.html' %}
+            <!-- /main sidebar -->
+
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Page header -->
+                {% block page_header %}
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                        </div>
+                    </div>
+
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'home' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+                            <li class="active">Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+                {% endblock %}
+                <!-- /page header -->
+
+
+                <!-- Content area -->
+                <div class="content">
+
+                    {% block content %}
+                    {% endblock %}
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <ul class="nav navbar-nav no-border visible-xs-block">
+            <li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second"><i class="icon-circle-up2"></i></a></li>
+        </ul>
+
+        <div class="navbar-collapse collapse" id="navbar-second">
+            <div class="navbar-text">
+                © 2016. <a href="#">NMS Tool</a> by <a href="http://pythonvietnam.info" target="_blank">Python Việt Nam</a>
+            </div>
+
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'help' %}">Help center</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="#" class="text-semibold">Hotline: 0918.612.485</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core JS files -->
+	<script type="text/javascript" src="{% static 'assets/js/plugins/loaders/pace.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/core/libraries/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/core/libraries/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/plugins/loaders/blockui.min.js' %}"></script>
+	<!-- /core JS files -->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-77518888-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

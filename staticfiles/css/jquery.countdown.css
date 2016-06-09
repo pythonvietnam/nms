@@ -1,0 +1,85 @@
+/* --- Countdown JS Plugin CSS by Jonathan Bird: www.jonathanbird.com.au --- */
+#countdown-wrap {
+	
+}
+#countdown-wrap p {
+	float: left;
+	margin: 20px 0 0 0;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+#countdown-wrap p em {
+	color: #fff;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 15px;
+}
+.standard #countdown-wrap{
+	float: left;
+	width: 350px;
+}
+
+/* -- jquery countdown --- */
+
+.countdown {
+	width: 350px;
+	font: 300 52px;
+	text-align: center;
+	letter-spacing: 0;
+}
+
+.home .countdown {
+	position: relative;
+	float: right;
+	margin: 0;
+}
+
+.countdown .segment {
+	position: relative;
+	float: left;
+	padding: 0 0 0 13px;
+}
+
+.countdown .digit-slot {
+	position: relative;
+	float: left;
+	width: 27px;
+	height: 60px;
+	overflow: hidden;
+}
+
+.countdown .digit {
+	position: absolute;
+	font-size: 52px;
+	text-align: center;
+	color: #fff;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif !important;
+}
+
+.countdown .title {
+	font-size: 12px;
+	font-weight: 300;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	color: #fff;
+	line-height: 12px;
+	clear: both;
+}
+
+.countdown .divider {
+	position: absolute;
+	top: 18px;
+	left: 5px;
+	width: 2px;
+	height: 36px;
+	/*background-color: #e9e9e9;     Uncomment if you want a divider */
+}
+
+.countdown .Days .divider {
+	display: none;
+}
+
+.home .countdown .Days .divider {
+	display: block;
+}

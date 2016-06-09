@@ -1,0 +1,223 @@
+{% extends 'base/layout.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+    <!-- User profile -->
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="tabbable">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="activity">
+
+                        <!-- Timeline -->
+                        <div class="timeline timeline-left content-group">
+                            <div class="timeline-container">
+
+                                <!-- Invoices -->
+                                <div class="timeline-row">
+                                    <div class="timeline-icon">
+                                        <div class="bg-warning-400">
+                                            <i class="icon-cash3"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h6 class="text-semibold no-margin-top">Token</h6>
+                                                            <ul class="list list-unstyled">
+                                                                <li>ID #: {{ request.user.email }}</li>
+                                                                <li>Key: <span class="text-semibold">{{ request.user.profile.token }}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-footer">
+                                                    <ul class="pull-right">
+                                                        <li><a href="#" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i> Change Token</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="panel border-left-lg border-left-success invoice-grid timeline-content">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h6 class="text-semibold no-margin-top">{{ request.user.email }}</h6>
+                                                            <ul class="list list-unstyled">
+                                                                <li>Last login: <span class="text-semibold">{{ request.user.last_login }}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-footer">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /invoices -->
+
+                                <!-- Video posts -->
+                                <div class="timeline-row">
+                                    <div class="timeline-icon">
+                                        <img src="{% static 'assets/images/placeholder.jpg' %}" alt="">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="panel panel-flat timeline-content">
+                                                <div class="panel-heading">
+                                                    <h6 class="panel-title">Woodturner master</h6>
+                                                    <div class="heading-elements">
+                                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> Yesterday, 7:52 am</span>
+                                                        <ul class="icons-list">
+                                                            <li class="dropdown">
+                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="icon-arrow-down12"></i>
+                                                                </a>
+
+                                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                                    <li><a href="#"><i class="icon-user-lock"></i> Hide user posts</a></li>
+                                                                    <li><a href="#"><i class="icon-user-block"></i> Block user</a></li>
+                                                                    <li><a href="#"><i class="icon-user-minus"></i> Unfollow user</a></li>
+                                                                    <li class="divider"></li>
+                                                                    <li><a href="#"><i class="icon-embed"></i> Embed post</a></li>
+                                                                    <li><a href="#"><i class="icon-blocked"></i> Report this post</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="video-container content-group">
+                                                        <iframe allowfullscreen="" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/126545288?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen=""></iframe>
+                                                    </div>
+
+                                                    Bewitchingly amid heard by llama glanced fussily quetzal more that overcame eerie goodness badger woolly where since gosh accurate irrespective that pounded much winked urgent and furtive house gosh one while this more.
+                                                </div>
+
+                                                <div class="panel-footer">
+                                                    <ul>
+                                                        <li><a href="#"><i class="icon-eye4 position-left"></i> 285</a></li>
+                                                        <li><a href="#"><i class="icon-comment-discussion position-left"></i> 12</a></li>
+                                                    </ul>
+
+                                                    <ul class="pull-right">
+                                                        <li><a href="#">Read post <i class="icon-arrow-right14 position-right"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="panel panel-flat timeline-content">
+                                                <div class="panel-heading">
+                                                    <h6 class="panel-title"><i class="icon-comment-discussion position-left"></i> <a href="#">Jason</a> commented:</h6>
+                                                    <div class="heading-elements">
+                                                        <ul class="icons-list">
+                                                            <li class="dropdown">
+                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="icon-arrow-down12"></i>
+                                                                </a>
+
+                                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                                    <li><a href="#"><i class="icon-user-lock"></i> Hide user posts</a></li>
+                                                                    <li><a href="#"><i class="icon-user-block"></i> Block user</a></li>
+                                                                    <li><a href="#"><i class="icon-user-minus"></i> Unfollow user</a></li>
+                                                                    <li class="divider"></li>
+                                                                    <li><a href="#"><i class="icon-embed"></i> Embed post</a></li>
+                                                                    <li><a href="#"><i class="icon-blocked"></i> Report this post</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="video-container content-group">
+                                                        <iframe allowfullscreen="" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/133217402?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen=""></iframe>
+                                                    </div>
+
+                                                    <blockquote>
+                                                        <p>When suspiciously goodness labrador understood rethought yawned grew piously endearingly inarticulate oh goodness jeez trout distinct hence cobra.</p>
+                                                        <footer>Jason, <cite title="Source Title">10:39 am</cite></footer>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /video posts -->
+
+                            </div>
+                        </div>
+                        <!-- /timeline -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+
+            <!-- User thumbnail -->
+            <div class="thumbnail">
+                <div class="thumb thumb-rounded thumb-slide">
+                    <img src="{% static 'assets/images/placeholder.jpg' %}" alt="">
+                    <div class="caption">
+                        <span>
+                            <a href="#" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+                            <a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="caption text-center">
+                    <h6 class="text-semibold no-margin">{{ request.user.email }} <small class="display-block">{{ request.user.profile.get_subscription_display }}</small></h6>
+                </div>
+            </div>
+            <!-- /user thumbnail -->
+
+
+            <!-- Navigation -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Navigation</h6>
+                    <div class="heading-elements">
+                        <a href="#" class="heading-text">See all &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="list-group list-group-borderless no-padding-top">
+                    <a href="#" class="list-group-item"><i class="icon-user"></i> My profile</a>
+                    <a href="#" class="list-group-item"><i class="icon-cash3"></i> Balance</a>
+                    <a href="#" class="list-group-item"><i class="icon-tree7"></i> Connections <span class="badge bg-danger pull-right">29</span></a>
+                    <a href="#" class="list-group-item"><i class="icon-users"></i> Friends</a>
+                    <div class="list-group-divider"></div>
+                    <a href="#" class="list-group-item"><i class="icon-calendar3"></i> Events <span class="badge bg-teal-400 pull-right">48</span></a>
+                    <a href="#" class="list-group-item"><i class="icon-cog3"></i> Account settings</a>
+                </div>
+            </div>
+            <!-- /navigation -->
+
+        </div>
+    </div>
+    <!-- /user profile -->
+{% endblock %}
+
+{% block js %}
+    
+{% endblock %}

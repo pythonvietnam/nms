@@ -1,0 +1,74 @@
+{% extends 'base/layout.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{% endblock %}
+
+<!-- Page header -->
+{% block page_header %}
+    <div class="page-header">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Address</h4>
+            </div>
+        </div>
+
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="icon-home2 position-left"></i> Home</a></li>
+                <li><a href="{% url 'ip' %}"><i class="icon-list-unordered position-left"></i> Address</a></li>
+                <li class="active">New Address</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+<!-- /page header -->
+
+
+{% block content %}
+    <!-- Ajax sourced data -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title">New Address</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <form action="" method="POST" class="form-horizontal">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Address <span class="text-danger">*</span></label>
+                    <div class="col-lg-9">
+                        <input type="text" name="address" class="form-control" placeholder="Your Address" />
+                        <label class="validation-error-label">{{ form.address.errors }}</label>
+                    </div>
+                </div>
+
+                {% if request.user.profile.subscription != 1 %}
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Virtual Host</label>
+                    <div class="col-lg-9">
+                        <input type="text" name="vhost" class="form-control" placeholder="Virtual Host" />
+                        <label class="validation-error-label">{{ form.vhost.errors }}</label>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Submit <i class="icon-arrow-right14 position-right"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /ajax sourced data -->
+{% endblock %}
+
+{% block js %}
+    
+    <!-- /theme JS files -->
+{% endblock %}
