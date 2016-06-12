@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(threadName)-10s] 
 
 class CoreConfig(object):
     vhosts = [
-        {'user': 'loitd', 'password': 'pwd123***fuk', 'host': 'localhost', 'port': 5672, 'name': 'default'},
+        {'user': 'loitd', 'password': 'password', 'host': 'localhost', 'port': 5672, 'name': 'default'},
         #{'user': 'loitd2', 'password': 'password', 'name': 'vh2'},
     ]
 
@@ -19,9 +19,9 @@ class CoreConfig(object):
     PING_INTERVAL_SECONDS = 30
 
     # reloadable
-    URL_GET_LIST_IP = 'http://jetpjng.com/core/ip/'
+    URL_GET_LIST_IP = 'http://localhost/core/ip/'
 
-    URL_POST_TRANSACTION = 'http://jetpjng.com/core/transaction/'
+    URL_POST_TRANSACTION = 'http://localhost/core/transaction/'
 
     def __init__(self):
         logging.info("Loading configuration ...")

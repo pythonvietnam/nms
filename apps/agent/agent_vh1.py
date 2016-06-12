@@ -14,7 +14,7 @@ from pingit import PingThem
 import os, sys, time
 
 class AppAgent(object):
-    def __init__(self, usr='loitd', pwd='pwd123***fuk', host='188.166.183.66', port=5672, vhost='default'):
+    def __init__(self, usr='loitd', pwd='password', host='localhost', port=5672, vhost='default'):
 
         self.is_init = False
         while not self.is_init:
