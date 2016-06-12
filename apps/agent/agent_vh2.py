@@ -6,6 +6,8 @@
 # @community: Pythonvietnam
 #--------------------------------------------------
 
+#run for 1 time and quit
+
 import pika
 import json
 import random
@@ -43,13 +45,20 @@ class AppAgent(object):
                 print("[x] Agent interrupted by users ...")
                 sys.exit(0)
             except pika.exceptions.ConnectionClosed as e:
-                self.conn.close()
-                print("Exception while init: {0}".format(e))
+                # self.conn.close()
+                print("Exception while init: {0}. Now sleep 5s and retry ...".format(e))
                 time.sleep(5)
             except Exception as e:
-                self.conn.close()
-                print("Exception while init: {0}".format(e))
+                # self.conn.close()
+                print("Exception while init: {0}. Now sleep 5s and retry ...".format(e))
                 time.sleep(5)
+
+    def __del__(self):
+        try:
+            print("Now closing connection ...")
+            self.conn.close()
+        except Exception as e:
+            print("Exception while close connection!")
 
 
 
@@ -84,6 +93,10 @@ class AppAgent(object):
         ch.basic_ack(delivery_tag=method.delivery_tag)
         print("[x] Done ack")
 
+        # exit on complete
+        sys.exit(0)
+
+
     def doping(self, msg):
         """
         The ping method
@@ -100,7 +113,7 @@ class AppAgent(object):
         #     res.append({'i': el, 't': random.randint(0,100), 'c': strftime("%Y-%m-%d %H:%M:%S", gmtime()) })
 
         # real
-        p = PingThem(self._msg, 200)
+        p = PingThem(self._msg, 500)
         res = p.run()
 
         return json.dumps(res)

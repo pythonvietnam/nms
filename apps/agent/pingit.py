@@ -1,3 +1,11 @@
+#--------------------------------------------------
+# @author: Tran Duc Loi 
+# @email: loitranduc@gmail.com
+# @version: 1.0
+# @project: NMS - Jetpjng.com
+# @community: Pythonvietnam
+#--------------------------------------------------
+
 from threading import Thread
 from queue import Queue
 
@@ -10,6 +18,9 @@ logging.basicConfig(level=logging.INFO, format='(%(threadName)-10s) %(message)s'
 import time
 from time import gmtime, strftime
 
+# from datetime import datetime
+# from pytz import timezone
+
 
 class PingIt(object):
     def __init__(self):
@@ -17,8 +28,16 @@ class PingIt(object):
 
     def get_cur_time(self):
         # get the time based on local time of the server
-        return strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
-        # return time.asctime(time.localtime(time.time()))
+        # return strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
+
+        # print(time.localtime(time.time()))
+        # print(time.gmtime())
+        # print(datetime.utcnow())
+        return strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+        
+        # hn = timezone('Asia/Saigon')
+        # localdt = hn.localize(datetime.now())
+        # return localdt.strftime('%Y-%m-%d %H:%M:%S %Z%z')
 
 
     def doping(self, target, numofpack=2, cmdtimeout=2, defaultdie=999):
@@ -64,7 +83,7 @@ class PingThem():
     def __init__(self, targets, maxthreads=100):
         self.q1 = Queue(maxsize=0)
         self.q2 = Queue(maxsize=0)
-        self.maxthreads = maxthreads
+        self.maxthreads = maxthreads if len(targets) >= maxthreads else len(targets)
         
 
         for target in targets:
@@ -90,6 +109,7 @@ class PingThem():
             self.q1.task_done()
 
     def run(self):
+        print("Will start {0} threads for checking ...".format(self.maxthreads))
         allts = []
         for i in range(self.maxthreads):
             t = Thread(target=self.worker)
@@ -121,7 +141,7 @@ class PingThem():
 
 if __name__ == '__main__':
     targets = [
-        'vnexpress.net', 'dantri.vn', 'mongo.vn', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
+        'vnexpress.net', 'megacard.vn', 'shipantoan.vn', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
         # '1.1.1.1', '2.2.2.2', '3.3.3.3', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
         # '1.1.1.1', '2.2.2.2', '3.3.3.3', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
         # '1.1.1.1', '2.2.2.2', '3.3.3.3', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
@@ -168,11 +188,13 @@ if __name__ == '__main__':
         # '1.1.1.1', '2.2.2.2', '3.3.3.3', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
         # '1.1.1.1', '2.2.2.2', '3.3.3.3', '8.8.8.8', '127.0.0.1', 'localhost', 'google.com', 'dantri.com.vn', 
     ]
-    p = PingThem(targets, 300)
-    x = p.run()
-    print(x)
+    
+    # p = PingThem(targets, 300)
+    # x = p.run()
+    # print(x)
 
-    # p = PingIt()
+    p = PingIt()
+    print(p.get_cur_time())
     # p.doping('127.0.0.1')
 
 

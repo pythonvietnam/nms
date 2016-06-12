@@ -1,6 +1,17 @@
+#--------------------------------------------------
+# @author: Tran Duc Loi 
+# @email: loitranduc@gmail.com
+# @version: 1.0
+# @project: NMS - Jetpjng.com
+# @community: Pythonvietnam
+#--------------------------------------------------
+
 import requests
 import json
+
+# import mylog
 import logging
+# mylog.initialize_logger()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(threadName)-10s] %(message)s')
 
 
@@ -11,17 +22,22 @@ class Caller(object):
 
 
     def getIPS(self, url, vhost=None):
-        r = requests.get(url, data={'vhost': vhost})
-        if r.status_code == 200:
-            #print(r.json())
-            if vhost == None:
-                return r.json()
-            else:
-                for k,v in r.json().items():
-                    if k == vhost:
-                        return v
+        try:
+            r = requests.get(url, data={'vhost': vhost})
+            if r.status_code == 200:
+                #print(r.json())
+                if vhost == None:
+                    return r.json()
+                else:
+                    for k,v in r.json().items():
+                        if k == vhost:
+                            return v
+        except requests.exceptions.ConnectionError as e:
+            logging.error("[Caller] ConnectionError while Get IPs: {0}".format(e))
+        except Exception as e:
+            logging.error("[Caller] Get IPs failed: {0}".format(e))
+        return False
 
-                return False
 
     def insertIPS(self, url, msg):
         print("[Caller] Begin posting data: {0}".format(msg))

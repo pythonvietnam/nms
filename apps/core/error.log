@@ -1,0 +1,2 @@
+2016-06-09 23:42:58,494 [MainThread] The channel is closed. Error message: (405, "RESOURCE_LOCKED - cannot obtain exclusive access to locked queue 'reply' in vhost 'default'")
+2016-06-09 23:42:58,929 [default   ] The channel is closed. Error message: (405, "RESOURCE_LOCKED - cannot obtain exclusive access to locked queue 'reply' in vhost 'default'")
